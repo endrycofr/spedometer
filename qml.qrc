@@ -1,0 +1,34 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>images/1.png</file>
+        <file>images/2.png</file>
+        <file>images/3.png</file>
+        <file>images/4.png</file>
+        <file>images/5879yu.png</file>
+        <file>images/Celcius.png</file>
+        <file>images/D.png</file>
+        <file>images/E.png</file>
+        <file>images/Group 1.png</file>
+        <file>images/Group 5.png</file>
+        <file>images/Group.png</file>
+        <file>images/h.png</file>
+        <file>images/N.png</file>
+        <file>images/P.png</file>
+        <file>images/R.png</file>
+        <file>images/S.png</file>
+        <file>images/Subtract.png</file>
+        <file>images/Union aru.png</file>
+        <file>images/Union.png</file>
+        <file>images/Vector 6.png</file>
+        <file>images/Vector 7.png</file>
+        <file>images/Vector.png</file>
+        <file>images/Vector-1.png</file>
+        <file>images/Vector-2.png</file>
+        <file>images/Vector-3.png</file>
+        <file>fonts/fonts.txt</file>
+        <file>images/rpm.png</file>
+        <file>images/farheint.png</file>
+        <file>images/Frame.png</file>
+    </qresource>
+</RCC>
