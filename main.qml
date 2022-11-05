@@ -330,7 +330,7 @@ Window {
                 id: text14
                 y: -38
                 color: "#ffffff"
-                text: qsTr(" 12.00 PM")
+                text: qsTr(" 11.00 PM")
                 font.pixelSize: 26
                 anchors.horizontalCenterOffset: 3
                 anchors.horizontalCenter: parent.horizontalCenter
