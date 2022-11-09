@@ -3,7 +3,10 @@
 #include <QQmlContext>
 #include "temperature.h"
 #include "spedometer.h"
-//#include "digitalclock.h"
+#include "rpm.h"
+#include "temp_ruangan.h"
+
+
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -17,11 +20,19 @@ int main(int argc, char *argv[])
     spedometer kecepatan;
 //    DigitalClock waktu ;
     temperature mesin;
+     rpm roda;
+     temp_ruangan panas;
+
 //    engine.rootContext()->setContextProperty("waktu", &waktu);
 
     engine.rootContext()->setContextProperty("kecepatan", &kecepatan);
 
     engine.rootContext()->setContextProperty("mesin", &mesin);
+
+    engine.rootContext()->setContextProperty("roda", &roda);
+    engine.rootContext()->setContextProperty("panas", &panas);
+
+
 
 //    qmlRegisterType<ExampleClass>("KelasContoh", 1, 0, "KelasContoh");
 

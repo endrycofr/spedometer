@@ -11,6 +11,7 @@ public:
 
 
     Q_INVOKABLE int getsuhu();
+signals:
 
 };
 #endif // TEMPERATURE_H

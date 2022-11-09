@@ -11,8 +11,9 @@ Window {
     color: "#000000"
 
     property int speed // mendeklarasikan variable
-    property int mercury // mendeklarasikan variable
-    property int revolusi // mendeklarasikan variable
+    property int temp_mesin // mendeklarasikan variable
+    property int temp_ruangan // mendeklarasikan variable
+    property int rotasi // mendeklarasikan variable
      property int rest // mendeklarasikan variable
      property int avg // mendeklarasikan variable
          property int odo // mendeklarasikan variable
@@ -291,9 +292,12 @@ Window {
                 x: 745
                 y: 321
                 color: "#ffffff"
-                text: qsTr("1000")
+//                text: qsTr("1000")
+
                 font.pixelSize: 23
                 font.family: "Montserrat Alternates"
+                text: rotasi.toString()
+
             }
 
             Image {
@@ -319,18 +323,26 @@ Window {
                 x: 890
                 y: -35
                 color: "#ffffff"
-                text: qsTr("30°C")
+                text: temp_ruangan.toString()
                 font.pixelSize: 22
                 font.family: "Montserrat Alternates"
-//                  text: mercury.toString()
 
             }
+            Image {
+                id: celcius
+                x: 915
+                y: -32
+                width: 22
+                height: 18
+                source: "images/Celcius.png"
+                fillMode: Image.PreserveAspectFit
+                }
 
             Text {
                 id: text14
                 y: -38
                 color: "#ffffff"
-                text: qsTr(" 11.00 PM")
+                text: qsTr(" 12.00 PM")
                 font.pixelSize: 26
                 anchors.horizontalCenterOffset: 3
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -346,12 +358,12 @@ Window {
                 fillMode: Image.PreserveAspectFit
 }
             Text {
-                id: text15
+                id: temperaturmesin
                 x: 648
                 y: -35
                 color: "#ffffff"
 //                text: qsTr("°F")
-                text: mercury.toString()
+                text: temp_mesin.toString()
                 font.pixelSize: 22
                 font.family: "Montserrat Alternates"
             }
@@ -497,9 +509,11 @@ Window {
         running: true
         onTriggered: {
             speed = kecepatan.getData()
-            mercury= mesin.getsuhu()
+            temp_mesin= mesin.getsuhu()
+            rotasi= roda.getputaran()
+            temp_ruangan=panas.getsuhu1()
 
-//            clock = waktu.gettime()
+
 //            speed = kecepatan.getData()
 //            speed = kecepatan.getData()
 //            speed = kecepatan.getData()

@@ -2,10 +2,20 @@
 #define RPM_H
 
 
-class rpm
+#include <QObject>
+
+class rpm : public QObject
 {
+    Q_OBJECT
 public:
-    rpm();
+    explicit rpm(QObject *parent = nullptr);
+    int result;
+
+
+    Q_INVOKABLE int getputaran();
+
+signals:
+
 };
 
-#endif // RPM_H
+#endif //RPM_H

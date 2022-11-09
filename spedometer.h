@@ -8,7 +8,6 @@ class spedometer : public QObject
     Q_OBJECT
 public:
     explicit spedometer(QObject *parent = nullptr);
-    int result;
     int speed;
 
 

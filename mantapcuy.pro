@@ -8,6 +8,7 @@ SOURCES += \
         main.cpp \
         rpm.cpp \
         spedometer.cpp \
+        temp_ruangan.cpp \
         temperature.cpp
 
 RESOURCES += qml.qrc
@@ -26,4 +27,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     rpm.h \
     spedometer.h \
+    temp_ruangan.h \
     temperature.h
