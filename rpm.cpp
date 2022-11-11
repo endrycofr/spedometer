@@ -20,7 +20,7 @@ int rpm::getputaran(){
 
       }
 
-      //    qDebug() << result;
+//          qDebug() << result;
 
 return result;
 }

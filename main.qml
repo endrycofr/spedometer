@@ -2,7 +2,6 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
 import QtQml 2.12
-
 Window {
     width: 1440
     height: 600
@@ -14,11 +13,10 @@ Window {
     property int temp_mesin // mendeklarasikan variable
     property int temp_ruangan // mendeklarasikan variable
     property int rotasi // mendeklarasikan variable
-     property int rest // mendeklarasikan variable
+     property int tujuan // mendeklarasikan variable
      property real rata_batarai  // mendeklarasikan variable
          property real odometer // mendeklarasikan variable
       property int clock // mendeklarasikan variable
-
 
     Rectangle {
         width: 1440
@@ -340,15 +338,29 @@ Window {
                 }
 
             Text {
-                id: text14
+                id: timeText
                 y: -38
                 color: "#ffffff"
-                text: qsTr(" 12.00 PM")
                 font.pixelSize: 26
                 anchors.horizontalCenterOffset: 3
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.family: "Montserrat Alternates"
-            }
+
+          text: Qt.formatTime(new Date(),"hh:mm")
+        }
+            Timer {
+                    interval: 2000
+                    running: true
+                    repeat: true
+
+                    onTriggered: {
+                        var date = new Date()
+                        timeText.text = date.toLocaleTimeString(Qt.LocalTime, Locale.ShortFormat)
+                    }
+                }
+
+
+
             Image {
                 id: farheint
                 x: 684
@@ -402,7 +414,7 @@ Window {
                 x: 752
                 y: 420
                 color: "#ffd700"
-                text: qsTr("465")
+                text: tujuan.toString()
                 font.pixelSize: 23
                 font.family: "Montserrat Alternates"
             }
@@ -514,14 +526,13 @@ Window {
             rotasi= roda.getputaran()
             temp_ruangan=panas.getsuhu1()
             rata_batarai=irit.getrata().toFixed(1)
-            odometer=km.gettempuh().toFixed(2)
             }
 
 }
 
     Timer {
         id: timer1
-        interval: 40
+        interval: 1
         repeat: true
         running: true
         onTriggered: {
@@ -530,6 +541,20 @@ Window {
             }
 
 }
+
+    Timer {
+        id: timer2
+        interval: 1000
+        repeat: true
+        running: true
+        onTriggered: {
+
+            tujuan= istirahat.getsisa()
+            }
+
+}
+
+
     Timer {
               id: blinkleftsign
               interval: 500
