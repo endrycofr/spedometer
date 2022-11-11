@@ -15,9 +15,10 @@ Window {
     property int temp_ruangan // mendeklarasikan variable
     property int rotasi // mendeklarasikan variable
      property int rest // mendeklarasikan variable
-     property int avg // mendeklarasikan variable
-         property int odo // mendeklarasikan variable
+     property real rata_batarai  // mendeklarasikan variable
+         property real odometer // mendeklarasikan variable
       property int clock // mendeklarasikan variable
+
 
     Rectangle {
         width: 1440
@@ -232,7 +233,7 @@ Window {
                 x: 507
                 y: 370
                 color: "#ffffff"
-                text: qsTr(" 96.7")
+                text: rata_batarai.toString()
                 font.pixelSize: 26
                 font.family: "Montserrat Alternates"
             }
@@ -252,7 +253,7 @@ Window {
                 x: 994
                 y: 373
                 color: "#ffffff"
-                text: qsTr(" 14")
+                text: odometer.toString()
                 font.pixelSize: 26
                 font.family: "Montserrat Alternates"
             }
@@ -512,21 +513,23 @@ Window {
             temp_mesin= mesin.getsuhu()
             rotasi= roda.getputaran()
             temp_ruangan=panas.getsuhu1()
-
-
-//            speed = kecepatan.getData()
-//            speed = kecepatan.getData()
-//            speed = kecepatan.getData()
-//            speed = kecepatan.getData()
-//            speed = kecepatan.getData()
-//            speed = kecepatan.getData()
-
-//            text1.text = String(status)
+            rata_batarai=irit.getrata().toFixed(1)
+            odometer=km.gettempuh().toFixed(2)
             }
 
 }
 
+    Timer {
+        id: timer1
+        interval: 40
+        repeat: true
+        running: true
+        onTriggered: {
 
+            odometer=km.gettempuh().toFixed(2)
+            }
+
+}
     Timer {
               id: blinkleftsign
               interval: 500

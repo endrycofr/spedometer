@@ -5,7 +5,8 @@
 #include "spedometer.h"
 #include "rpm.h"
 #include "temp_ruangan.h"
-
+#include "avg.h"
+#include "odo.h"
 
 int main(int argc, char *argv[])
 {
@@ -22,6 +23,8 @@ int main(int argc, char *argv[])
     temperature mesin;
      rpm roda;
      temp_ruangan panas;
+     avg irit;
+     odo km;
 
 //    engine.rootContext()->setContextProperty("waktu", &waktu);
 
@@ -31,6 +34,8 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("roda", &roda);
     engine.rootContext()->setContextProperty("panas", &panas);
+    engine.rootContext()->setContextProperty("irit", &irit);
+    engine.rootContext()->setContextProperty("km", &km);
 
 
 

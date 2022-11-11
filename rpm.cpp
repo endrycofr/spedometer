@@ -8,7 +8,7 @@ rpm::rpm(QObject *parent) : QObject(parent)
 result=0;
 }
 int rpm::getputaran(){
-      std::uniform_int_distribution<int>distribution(5,6);
+      std::uniform_int_distribution<int>distribution(5,7);
       for (int i = 0; i < 1000; i++)
       {
           result=result+1;

@@ -5,7 +5,9 @@ QT += quick
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        avg.cpp \
         main.cpp \
+        odo.cpp \
         rpm.cpp \
         spedometer.cpp \
         temp_ruangan.cpp \
@@ -25,6 +27,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    avg.h \
+    odo.h \
     rpm.h \
     spedometer.h \
     temp_ruangan.h \
