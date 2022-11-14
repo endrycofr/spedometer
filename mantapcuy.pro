@@ -6,6 +6,7 @@ QT += quick
 
 SOURCES += \
         avg.cpp \
+        baterai.cpp \
         main.cpp \
         odo.cpp \
         rest.cpp \
@@ -29,6 +30,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     avg.h \
+    baterai.h \
     odo.h \
     rest.h \
     rpm.h \

@@ -30,5 +30,10 @@
         <file>images/rpm.png</file>
         <file>images/farheint.png</file>
         <file>images/Frame.png</file>
+        <file>images/baterai.png</file>
+        <file>images/oke.png</file>
+        <file>images/coba.png</file>
+        <file>images/coba2.png</file>
+        <file>images/%.png</file>
     </qresource>
 </RCC>

@@ -8,6 +8,7 @@
 #include "avg.h"
 #include "odo.h"
 #include "rest.h"
+#include "baterai.h"
 
 int main(int argc, char *argv[])
 {
@@ -27,6 +28,7 @@ int main(int argc, char *argv[])
      avg irit;
      odo km;
      rest istirahat;
+     baterai lama;
 
 //    engine.rootContext()->setContextProperty("waktu", &waktu);
 
@@ -39,7 +41,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("irit", &irit);
     engine.rootContext()->setContextProperty("km", &km);
     engine.rootContext()->setContextProperty("istirahat", &istirahat);
-
+    engine.rootContext()->setContextProperty("lama", &lama);
 
 
 //    qmlRegisterType<ExampleClass>("KelasContoh", 1, 0, "KelasContoh");

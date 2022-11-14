@@ -9,9 +9,11 @@ class spedometer : public QObject
 public:
     explicit spedometer(QObject *parent = nullptr);
     int speed;
+     int battery;
 
 
     Q_INVOKABLE int getData();
+     Q_INVOKABLE int getBatteryMin();
 
 signals:
 

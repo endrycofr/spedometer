@@ -17,6 +17,8 @@ Window {
      property real rata_batarai  // mendeklarasikan variable
          property real odometer // mendeklarasikan variable
       property int clock // mendeklarasikan variable
+        property int valbattery
+     property int tahan_baterai
 
     Rectangle {
         width: 1440
@@ -62,15 +64,20 @@ Window {
                           height: 28
                           source: "images/Vector-1.png"
                           fillMode: Image.PreserveAspectFit
-                          opacity: 0.3
-
+                          opacity: 1
                           MouseArea {
                               anchors.fill: parent
                               onClicked: {
-                                  if(vector1.opacity >= 1)
-                                      vector1.opacity = 0.3
-                                  else
+                                  if(vector1.opacity >= 0.3)
+                                  {
                                       vector1.opacity = 1
+                                      vector2.opacity = 0.3
+                                  }
+
+//                                  if(vector1.opacity >= 1)
+//                                      vector1.opacity = 0.3
+//                                  else
+//                                      vector1.opacity = 1
                               }
                           }
                       }
@@ -83,22 +90,21 @@ Window {
                           height: 30
                           source: "images/Vector-2.png"
                           fillMode: Image.PreserveAspectFit
-                          opacity: 0.5
+                          opacity: 0.3
 
                           MouseArea {
                               anchors.fill: parent
-                              onPressAndHold:  {
-                                  if (lampuhazard.running === false)
-                                      lampuhazard.running = true
-                                  else
-                                      lampuhazard.running = false
-
-                              }
                               onClicked: {
-                                  if(vector2.opacity >= 1)
-                                      vector2.opacity = 0.5
-                                  else
+
+                                  if(vector2.opacity >= 0.3)
+                                  {
                                       vector2.opacity = 1
+                                      vector1.opacity = 0.3
+                                  }
+//                                  if(vector2.opacity >= 1)
+//                                      vector2.opacity = 0.5
+//                                  else
+//                                      vector2.opacity = 1
                               }
                           }
                       }
@@ -261,9 +267,27 @@ Window {
                 x: 1136
                 y: 440
                 color: "#ffd700"
-                text: qsTr("100%")
+                text: tahan_baterai.toString()
                 font.pixelSize: 22
                 font.family: "Montserrat Alternates"
+                Image {
+                    id: bateraipersen
+                   x:{
+                       if(tahan_baterai==100){
+                        "39"
+
+                    }
+                       else{
+                        "30"
+                       }
+                   }
+                    y: 0
+                    width: 15
+                    height: 25
+                    source: "images/%.png"
+                    fillMode: Image.PreserveAspectFit
+                }
+
             }
 
             Image {
@@ -389,14 +413,26 @@ Window {
                 height: 48
                 source: "images/N.png"
                 fillMode: Image.PreserveAspectFit
-                opacity: 0.2
+                opacity: 1
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        if(n.opacity >= 1)
-                            n.opacity = 0.3
-                        else
+
+                        if(n.opacity >= 0.5)
+                        {
                             n.opacity = 1
+                            d.opacity = 0.5
+                            s.opacity = 0.5
+                            r.opacity = 0.5
+                            p.opacity = 0.5
+
+                        }
+
+
+//                        if(n.opacity >= 1)
+//                            n.opacity = 0.3
+//                        else
+//                            n.opacity = 1
                     }
                 }
             }
@@ -437,10 +473,21 @@ Window {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        if(s.opacity >= 1)
-                            s.opacity = 0.5
-                        else
-                            s.opacity = 1
+                        if(s.opacity >=  0.5)
+                        {
+                            s.opacity =  1
+                            n.opacity =  0.5
+                            d.opacity =  0.5
+                            r.opacity =  0.5
+                            p.opacity =  0.5
+
+                        }
+
+
+//                        if(s.opacity >= 1)
+//                            s.opacity = 0.5
+//                        else
+//                            s.opacity = 1
                     }
                 }
             }
@@ -454,10 +501,22 @@ Window {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        if(d.opacity >= 1)
-                            d.opacity = 0.5
-                        else
-                            d.opacity = 1
+
+                        if(d.opacity >=  0.5)
+                        {
+                            d.opacity =  1
+                            n.opacity =  0.5
+                            s.opacity =  0.5
+                            r.opacity =  0.5
+                            p.opacity =  0.5
+
+                        }
+
+
+//                        if(d.opacity >= 1)
+//                            d.opacity = 0.5
+//                        else
+//                            d.opacity = 1
                     }
                 }
             }
@@ -471,10 +530,19 @@ Window {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        if(p.opacity >= 1)
-                            p.opacity = 0.5
-                        else
-                            p.opacity = 1
+                        if(p.opacity >=  0.5)
+                        {
+                            p.opacity =  1
+                            n.opacity =  0.5
+                            d.opacity =  0.5
+                            r.opacity =  0.5
+                            s.opacity =  0.5
+
+                        }
+//                        if(p.opacity >= 1)
+//                            p.opacity = 0.5
+//                        else
+//                            p.opacity = 1
                     }
                 }
             }
@@ -488,32 +556,87 @@ Window {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        if(r.opacity >= 1)
-                            r.opacity = 0.5
-                        else
-                            r.opacity = 1
+
+                        if(r.opacity >=  0.5)
+                        {
+                            r.opacity =  1
+                            n.opacity =  0.5
+                            d.opacity =  0.5
+                            s.opacity =  0.5
+                            p.opacity =  0.5
+
+                        }
+//                        if(r.opacity >= 1)
+//                            r.opacity = 0.5
+//                        else
+//                            r.opacity = 1
                     }
                 }
             }
         }
 
-        Image {
-            id: group5
-            x: 309
-            y: 507
-            width: 823
-            height: 37
-            source: "images/Group 5.png"
-            fillMode: Image.PreserveAspectFit
 
-            Image {
-                id: e
-                x: 17
-                y: 17
-                source: "images/E.png"
-                fillMode: Image.PreserveAspectFit
+        Image {
+            id: e
+            x: 326
+            y: 520
+            source: "images/E.png"
+            fillMode: Image.PreserveAspectFit
+              opacity: {
+
+              if(valbattery > 114){
+                  "0.5"
+              }
+              else if(valbattery => 114){
+                  "1"
+              }
+           }
+
+        }
+
+                    Image {
+                        id: group5
+                        x: 350
+                        y: 509
+                        width: 730
+                        height: 37
+                        source: "images/baterai.png"
+                        fillMode: Image.PreserveAspectFit
+                    }
+
+
+        Rectangle {
+            id: batteryrectangle
+            x: 350
+            y: 522
+            height: 10
+            color: {
+            if(valbattery > 114){
+                "green"
+            }
+            else if(valbattery <= 114){
+                    "red"
+            }
+}
+
+        }
+
+        Timer {
+            id: batteryrectanglewidthmin
+            interval: 200
+            running: true
+            repeat: true
+            onTriggered: {
+
+                batteryrectangle.width = valbattery
+
+
             }
         }
+
+
+
+
     }
     Timer {
         id: timer
@@ -524,20 +647,33 @@ Window {
             speed = kecepatan.getData()
             temp_mesin= mesin.getsuhu()
             rotasi= roda.getputaran()
+            valbattery=kecepatan.getBatteryMin()
             temp_ruangan=panas.getsuhu1()
             rata_batarai=irit.getrata().toFixed(1)
             }
 
 }
+    Timer {
+        id: timerbaterai
+        interval:730
+        repeat: true
+        running: true
+        onTriggered: {
+
+            tahan_baterai =lama.getpersent()
+
+            }
+    }
 
     Timer {
         id: timer1
-        interval: 1
+        interval:1
         repeat: true
         running: true
         onTriggered: {
 
             odometer=km.gettempuh().toFixed(2)
+
             }
 
 }

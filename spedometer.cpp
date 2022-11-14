@@ -6,7 +6,7 @@
 spedometer::spedometer(QObject *parent) : QObject(parent)
 {
     speed = 0;
-
+battery =740;
 }
 
 int spedometer::getData(){
@@ -31,6 +31,11 @@ int spedometer::getData(){
 return speed;
 }
 
+int spedometer::getBatteryMin()
+{
+    battery = battery - 10;
 
+    return battery;
+}
 
 
