@@ -16,7 +16,7 @@ int baterai::getpersent(){
 
         }
 
-    if(perhitungan == 0)
+    if(perhitungan <= 0)
     {
         perhitungan=0;
     }

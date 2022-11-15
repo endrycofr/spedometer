@@ -418,7 +418,7 @@ Window {
                     anchors.fill: parent
                     onClicked: {
 
-                        if(n.opacity >= 0.5)
+                        if(n.opacity >= 0.3)
                         {
                             n.opacity = 1
                             d.opacity = 0.5
@@ -476,7 +476,7 @@ Window {
                         if(s.opacity >=  0.5)
                         {
                             s.opacity =  1
-                            n.opacity =  0.5
+                            n.opacity =  0.3
                             d.opacity =  0.5
                             r.opacity =  0.5
                             p.opacity =  0.5
@@ -505,7 +505,7 @@ Window {
                         if(d.opacity >=  0.5)
                         {
                             d.opacity =  1
-                            n.opacity =  0.5
+                            n.opacity =  0.3
                             s.opacity =  0.5
                             r.opacity =  0.5
                             p.opacity =  0.5
@@ -533,7 +533,7 @@ Window {
                         if(p.opacity >=  0.5)
                         {
                             p.opacity =  1
-                            n.opacity =  0.5
+                            n.opacity =  0.3
                             d.opacity =  0.5
                             r.opacity =  0.5
                             s.opacity =  0.5
@@ -560,7 +560,7 @@ Window {
                         if(r.opacity >=  0.5)
                         {
                             r.opacity =  1
-                            n.opacity =  0.5
+                            n.opacity =  0.3
                             d.opacity =  0.5
                             s.opacity =  0.5
                             p.opacity =  0.5
@@ -680,7 +680,7 @@ Window {
 
     Timer {
         id: timer2
-        interval: 1000
+        interval: 1850
         repeat: true
         running: true
         onTriggered: {

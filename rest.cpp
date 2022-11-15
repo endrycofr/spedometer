@@ -5,7 +5,7 @@
 #include <QUuid>
 rest::rest(QObject *parent) : QObject(parent)
 {
-berhenti=465;
+berhenti=40;
 }
 int rest::getsisa(){
       for (int i = 0; i < 1; i++)
@@ -14,6 +14,10 @@ int rest::getsisa(){
 
 
           }
+      if(berhenti <= 0)
+      {
+          berhenti=0;
+      }
 
 return berhenti;
 }
