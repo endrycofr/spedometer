@@ -612,10 +612,10 @@ Window {
             height: 10
             color: {
             if(valbattery > 114){
-                "green"
+                "#39D91F"
             }
             else if(valbattery <= 114){
-                    "red"
+                    "#FF0E0E"
             }
 }
 
