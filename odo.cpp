@@ -17,7 +17,10 @@ float odo::gettempuh(){
         hasil=hasil+0.001;
 
         }
-
+    if(hasil >= 43)
+    {
+        hasil=43;
+    }
 
 return hasil;
 }

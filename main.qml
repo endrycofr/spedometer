@@ -74,10 +74,6 @@ Window {
                                       vector2.opacity = 0.3
                                   }
 
-//                                  if(vector1.opacity >= 1)
-//                                      vector1.opacity = 0.3
-//                                  else
-//                                      vector1.opacity = 1
                               }
                           }
                       }
@@ -195,8 +191,14 @@ Window {
                 color: "#ffffff"
                 font.pixelSize: 100
                 font.family: "Montserrat Alternates"
-                text: speed.toString()
-
+                text:{
+                    if (tujuan ==0){
+                    qsTr("0")
+                    }
+                    else{
+                    speed.toString()
+                    }
+}
             }
             Image {
                 id: h
@@ -237,7 +239,14 @@ Window {
                 x: 507
                 y: 370
                 color: "#ffffff"
-                text: rata_batarai.toString()
+                text: {
+                    if (tujuan ==0){
+                               qsTr("0")
+                                   }
+                  else{
+                   rata_batarai.toString()
+                      }
+                    }
                 font.pixelSize: 26
                 font.family: "Montserrat Alternates"
             }
@@ -319,8 +328,14 @@ Window {
 
                 font.pixelSize: 23
                 font.family: "Montserrat Alternates"
-                text: rotasi.toString()
-
+                text:{
+                    if (tujuan ==0){
+                               qsTr("0")
+                                   }
+                  else{
+                    rotasi.toString()
+                      }
+                    }
             }
 
             Image {
@@ -655,7 +670,7 @@ Window {
 }
     Timer {
         id: timerbaterai
-        interval:730
+        interval:735
         repeat: true
         running: true
         onTriggered: {
@@ -680,7 +695,7 @@ Window {
 
     Timer {
         id: timer2
-        interval: 1850
+        interval: 1720
         repeat: true
         running: true
         onTriggered: {
