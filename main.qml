@@ -612,7 +612,7 @@ Window {
                     Image {
                         id: group5
                         x: 350
-                        y: 509
+                        y: 515
                         width: 730
                         height: 37
                         source: "images/baterai.png"
@@ -623,7 +623,7 @@ Window {
         Rectangle {
             id: batteryrectangle
             x: 350
-            y: 522
+            y: 528
             height: 10
             color: {
             if(valbattery > 114){
